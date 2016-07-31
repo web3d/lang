@@ -26,6 +26,7 @@ namespace AppserverIo\Lang;
  * var_dump($customer['id']);
  * var_dump($customer['categories']);
  * echo count($customer);
+ * var_dump($customer->toArray());
  * </pre>
  * 
  * @author jimmy
@@ -225,5 +226,13 @@ class Shape implements \IteratorAggregate, \ArrayAccess, \Countable
         if ($data) {
             trigger_error('fields:' . implode(',', array_keys($data)) . ' are not defined in the meta.');
         }
+    }
+    
+    /**
+     * 输出数组值
+     * @return array
+     */
+    public function toArray() {
+        return $this->data;
     }
 }
