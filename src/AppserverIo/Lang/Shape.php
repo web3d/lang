@@ -3,7 +3,7 @@
 namespace AppserverIo\Lang;
 
 /**
- * 实现类似hhvm中的Shape定义，hhvm中shape本质上是一个数组
+ * 实现类似hhvm hack中的Shape定义，hack中shape本质上是一个数组
  * 
  * 借助于php的gettype函数，实现类似强类型的概念，不做casting
  * 
