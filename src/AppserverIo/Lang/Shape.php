@@ -14,10 +14,12 @@ namespace AppserverIo\Lang;
  * <pre>
  * class Customer extends Shape
  * {
- *     parent::__construct(
+ *     public function __construct(array $data) {
+ *         parent::__construct(
  *          ['id' => self::int, 'name' => self::string, 'categories' => self::array],
  *          $data
- *     );
+ *         );
+ *      }
  * }
  * 
  * //数据访问与数组一样，只是一言不合就会抛异常，确保在开发阶段，做好数据类型分析和转换
