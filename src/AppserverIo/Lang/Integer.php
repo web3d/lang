@@ -128,12 +128,12 @@ class Integer extends Number implements \Serializable
      * <code>1.0000002f</code>; if the string is converted directly to
      * <code>float</code>, <code>1.000000<b>1</b>f</code> results.
      *
-     * @param \AppserverIo\Lang\String $string The string to be parsed
+     * @param \AppserverIo\Lang\Strng $string The string to be parsed
      *
-     * @return \AppserverIo\Lang\Integer A <code>Integer</code> object holding the value represented by the <code>String</code> argument
+     * @return \AppserverIo\Lang\Integer A <code>Integer</code> object holding the value represented by the <code>Strng</code> argument
      * @exception \AppserverIo\Lang\NumberFormatException If the string does not contain a parsable number
      */
-    public static function valueOf(String $string)
+    public static function valueOf(Strng $string)
     {
         if (! preg_match("/([0-9-]+)/", $string->stringValue())) {
             NumberFormatException::forInputString($string->stringValue());
@@ -146,16 +146,16 @@ class Integer extends Number implements \Serializable
 
     /**
      * Returns a new <code>Integer</code> initialized to the value
-     * represented by the specified <code>String</code>, as performed
+     * represented by the specified <code>Strng</code>, as performed
      * by the <code>valueOf</code> method of class <code>Integer</code>.
      *
-     * @param String $string The string to be parsed.
+     * @param Strng $string The string to be parsed.
      *
      * @return \AppserverIo\Lang\Integer The <code>Integer</code> value represented by the string argument.
      * @exception \AppserverIo\Lang\NumberFormatException If the string does not contain a parsable <code>Integer</code>.
      * @see \AppserverIo\Lang\Integer::valueOf($string)
      */
-    public static function parseInteger(String $string)
+    public static function parseInteger(Strng $string)
     {
         return Integer::valueOf($string)->intValue();
     }
@@ -224,11 +224,11 @@ class Integer extends Number implements \Serializable
     /**
      * This object as String returned.
      *
-     * @return \AppserverIo\Lang\String The value as String.
+     * @return \AppserverIo\Lang\Strng The value as String.
      */
     public function toString()
     {
-        return new String($this->value);
+        return new Strng($this->value);
     }
 
     /**
@@ -240,7 +240,7 @@ class Integer extends Number implements \Serializable
      */
     public function __toString()
     {
-        $string = new String($this->value);
+        $string = new Strng($this->value);
         return $string->stringValue();
     }
 
